@@ -1,15 +1,7 @@
 package grid;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
-
-@AllArgsConstructor
-public class Tile {
-    @Getter
-    private @NonNull Type type;
-
-    // Return the tile as a string based on its type.
+public record Tile(Tile.Type type) {
+    // Return the string representation of the tile based on its type.
     @Override
     public String toString() {
         switch (type) {
