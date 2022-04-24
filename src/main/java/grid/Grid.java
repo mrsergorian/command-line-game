@@ -10,12 +10,11 @@ public class Grid {
         fill();
     }
 
-    public void fill() {
+    private void fill() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
-                // Fill the walls
-                if (y == 0 || y == HEIGHT - 1 || x == 0 || x == WIDTH - 1) {
-                    grid[y][x] = new Tile(Tile.Type.WALL);
+                if ((y == 0) || (y == HEIGHT - 1) || (x == 0) || (x == WIDTH - 1)) {
+                    grid[y][x] = new Tile(Tile.Type.WALL); // Fill the walls
                 } else {
                     grid[y][x] = new Tile(Tile.Type.GROUND);
                 }
@@ -23,6 +22,9 @@ public class Grid {
         }
     }
 
+    /**
+     * Print the grid in 2D.
+     */
     public void print() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
@@ -30,5 +32,13 @@ public class Grid {
             }
             System.out.println();
         }
+    }
+
+    public Tile getTile(int y, int x) {
+        return grid[y][x];
+    }
+
+    public void setTile(int y, int x, Tile tile) {
+        grid[y][x] = tile;
     }
 }
