@@ -1,8 +1,6 @@
 package grid;
 
-import lombok.NonNull;
-
-public record Tile(@NonNull Type type) {
+public record Tile(Type type) {
     /**
      * Return the string representation of the tile based on its type.
      */
@@ -23,7 +21,7 @@ public record Tile(@NonNull Type type) {
     }
 
     /**
-     * Returns true if the tile is a ground tile and false if it is
+     * Returns true if the tile is a ground tile and false if it's
      * not.
      */
     public boolean isGround() {

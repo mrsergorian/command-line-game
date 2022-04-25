@@ -6,22 +6,6 @@ public class Grid {
 
     private final Tile[][] grid = new Tile[HEIGHT][WIDTH];
 
-    public Grid() {
-        fill();
-    }
-
-    private void fill() {
-        for (int y = 0; y < HEIGHT; y++) {
-            for (int x = 0; x < WIDTH; x++) {
-                if ((y == 0) || (y == HEIGHT - 1) || (x == 0) || (x == WIDTH - 1)) {
-                    grid[y][x] = new Tile(Tile.Type.WALL); // Fill the walls
-                } else {
-                    grid[y][x] = new Tile(Tile.Type.GROUND);
-                }
-            }
-        }
-    }
-
     /**
      * Print the grid in 2D.
      */
